@@ -1,6 +1,9 @@
 # vivero-seedbank
 
-Seed bank + nursery trays: lots, viability, sow dates, greenhouse beds.
-Fits Vivero Experimental ops. Not a plant shop frontend.
+Quiero anotar lotes de semillas (especie, año, gramos). Lo vi en videos de huerta y lo estoy pasando a Python.
 
-License: MIT. Public.
+`src/lots.py` es el primer intento.
+
+Si alguien del tema plantas ve un error, avisame. Recien empiezo.
+
+MIT.
