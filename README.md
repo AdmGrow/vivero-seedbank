@@ -1,9 +1,6 @@
 # vivero-seedbank
 
-Quiero anotar lotes de semillas (especie, año, gramos). Lo vi en videos de huerta y lo estoy pasando a Python.
+Lotes de semillas (especie, año, gramos). `src/lots.py`.
 
-`src/lots.py` es el primer intento.
-
-Si alguien del tema plantas ve un error, avisame. Recien empiezo.
-
-MIT.
+Público. MIT. Lee `LEEME_LICENCIA.md`.
+Hacé tu versión. Podés ganar dinero con lo que armes. Sin garantía.
