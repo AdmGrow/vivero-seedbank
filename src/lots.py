@@ -1,6 +1,6 @@
-"""Seed lots: species, origin, harvest year, viability, qty.
+"""Lotes de semillas. Lo fui armando con videos de huerta.
 """
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import date
 
 @dataclass
@@ -8,7 +8,7 @@ class Lot:
     id: str
     species: str
     harvest_year: int
-    viability: float   # 0-1
+    viability: float   # 0 a 1
     grams: float
     origin: str = ""
 
