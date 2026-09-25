@@ -2,6 +2,7 @@
 """
 from dataclasses import dataclass
 from datetime import date
+import csv
 
 @dataclass
 class Lot:
@@ -38,3 +39,19 @@ class SeedBank:
     def germ_rate(self, tray_id: str) -> float:
         t = self.trays[tray_id]
         return t.germinated / t.cells if t.cells else 0.0
+
+    def load_lots_csv(self, path: str):
+        """Carga lotes desde un csv con columnas: id,species,harvest_year,viability,grams
+        Simple, para principiantes. Si falta alguna columna, se rompe.
+        """
+        with open(path, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                lot = Lot(
+                    id=row["id"],
+                    species=row["species"],
+                    harvest_year=int(row["harvest_year"]),
+                    viability=float(row["viability"]),
+                    grams=float(row["grams"]),
+                )
+                self.add_lot(lot)
