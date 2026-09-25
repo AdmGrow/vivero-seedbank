@@ -42,14 +42,16 @@ class SeedBank:
 
     def load_lots_csv(self, path: str):
         """Carga lotes desde un csv con columnas: id,species,harvest_year,viability,grams
-        Simple, para principiantes. Si falta alguna columna, se rompe.
+        Simple, para principiantes. Salta filas vacias. Si falta columna, se rompe.
         """
         with open(path, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
+                if not row.get("id") or not str(row["id"]).strip():
+                    continue
                 lot = Lot(
-                    id=row["id"],
-                    species=row["species"],
+                    id=row["id"].strip(),
+                    species=row["species"].strip(),
                     harvest_year=int(row["harvest_year"]),
                     viability=float(row["viability"]),
                     grams=float(row["grams"]),
