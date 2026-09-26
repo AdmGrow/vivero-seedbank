@@ -4,7 +4,7 @@ Repo: vivero-seedbank.
 
 ## Que controla este repo
 
-Lotes de semillas (`src/lots.py`). No es una expendedora.
+Lotes de semillas (`src/vivero_seedbank/`). No es una expendedora.
 Android aca es planilla de campo / deposito, no kiosco de calle.
 
 ## Hardware minimo

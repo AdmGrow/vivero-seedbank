@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vivero-seedbank"
+version = "0.1.0a1"
+description = "Banco de semillas abierto: lotes, viabilidad y bandejas de germinación."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Lucas Baigorria / Vivero Experimental" }]
+keywords = ["seed bank", "banco de semillas", "vivero", "nursery", "germination", "agriculture"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: Spanish",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+seedbank = "vivero_seedbank.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/AdmGrow/vivero-seedbank"
+Issues = "https://github.com/AdmGrow/vivero-seedbank/issues"
+Discussions = "https://github.com/AdmGrow/vivero-seedbank/discussions"
+Blog = "https://vepa0.blogspot.com"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
