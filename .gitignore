@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# Datos locales del banco (pueden contener información propia; no subir)
+*.db
+*.sqlite
+*.sqlite3
