@@ -1,4 +1,6 @@
-"""Lotes de semillas. Lo fui armando con videos de huerta.
+"""Modelo de datos de Vivero Seedbank: lotes de semillas, bandejas de siembra y banco.
+
+Etapa alfa: los datos se guardan solo en memoria.
 """
 from dataclasses import dataclass
 from datetime import date
@@ -42,7 +44,7 @@ class SeedBank:
 
     def load_lots_csv(self, path: str):
         """Carga lotes desde un csv con columnas: id,species,harvest_year,viability,grams
-        Simple, para principiantes. Salta filas vacias. Si falta columna, se rompe.
+        Salta filas sin id. Si falta una columna requerida, lanza KeyError.
         """
         with open(path, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)

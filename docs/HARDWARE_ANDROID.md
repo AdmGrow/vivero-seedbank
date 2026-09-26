@@ -1,6 +1,6 @@
 # Hardware — Android como base
 
-Repo: vivero-seedbank. Distinto de open-vending. No fusionar.
+Repo: vivero-seedbank.
 
 ## Que controla este repo
 
