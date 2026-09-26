@@ -15,7 +15,8 @@ Relacionado con / Related to: #
 
 ## Checklist
 
-- [ ] El módulo sigue cargando: `python -c "import sys; sys.path.insert(0, 'src'); import lots"`
+- [ ] Los tests pasan: `python -m pytest` / Tests pass
+- [ ] Agregué o actualicé tests si cambia el comportamiento / Added or updated tests
 - [ ] Actualicé el `README.md` si cambia el uso / Updated README if usage changes
 - [ ] Agregué una línea en `CHANGELOG.md` (Unreleased)
 - [ ] No incluí datos personales, contraseñas ni tokens / No personal data or secrets included
