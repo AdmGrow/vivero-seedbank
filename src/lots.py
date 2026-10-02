@@ -59,3 +59,15 @@ class SeedBank:
                     grams=float(row["grams"]),
                 )
                 self.add_lot(lot)
+
+
+def expected_germinated(cells: int, viability: float) -> int:
+    """Plantulas que espero si siembro `cells` con esa viabilidad (0 a 1).
+
+    Redondeo al entero mas cercano. No reemplaza un conteo real en la bandeja.
+    """
+    if cells < 0:
+        raise ValueError("cells")
+    if not 0 <= viability <= 1:
+        raise ValueError("viability")
+    return round(cells * viability)
