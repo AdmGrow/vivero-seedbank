@@ -17,6 +17,35 @@
 4. Si cambiás el comportamiento, actualizá el `README.md` y agregá una línea en `CHANGELOG.md` (sección "Unreleased").
 5. Abrí el pull request completando la plantilla.
 
+## Running tests (English)
+
+Python 3.10 or later is required. Install `pytest` as a development dependency:
+
+```bash
+python -m pip install pytest
+```
+
+Run the complete test suite from the repository root:
+
+```bash
+python -m pytest
+```
+
+Pytest discovers both the original unittest cases and the new parametrized tests.
+
+To run one test file:
+
+```bash
+python -m pytest tests/test_seedbank.py
+python -m pytest tests/test_expected_germinated.py
+```
+
+The tests use the repository's example CSV and temporary files created by pytest's
+`tmp_path` fixture. They do not require a database or external services.
+
+When adding tests, cover the expected result, boundary values and invalid inputs.
+Keep tests independent and use temporary files for generated data.
+
 ## Estilo
 
 - Python 3.10+, sin dependencias externas salvo que se discuta antes.
