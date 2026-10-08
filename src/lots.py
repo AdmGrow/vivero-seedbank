@@ -2,6 +2,7 @@
 
 Etapa alfa: los datos se guardan solo en memoria.
 """
+
 from dataclasses import dataclass
 from datetime import date
 import csv
@@ -71,3 +72,4 @@ def expected_germinated(cells: int, viability: float) -> int:
     if not 0 <= viability <= 1:
         raise ValueError("viability")
     return round(cells * viability)
+
