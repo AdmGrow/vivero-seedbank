@@ -5,7 +5,7 @@ Etapa alfa: los datos se guardan solo en memoria.
 
 from dataclasses import dataclass
 from datetime import date
-import csv, json
+import csv
 
 @dataclass
 class Lot:
@@ -73,7 +73,3 @@ def expected_germinated(cells: int, viability: float) -> int:
         raise ValueError("viability")
     return round(cells * viability)
 
-
-
-if __name__ == '__main__':
-    pass

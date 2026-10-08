@@ -1,5 +1,5 @@
 from datetime import  date
-from src.lots import SeedBank, Lot, Tray, expected_germinated
+from src.lots import SeedBank, Lot, Tray
 import pytest
 import csv
 from pathlib import Path

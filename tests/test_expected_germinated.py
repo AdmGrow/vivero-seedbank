@@ -82,5 +82,6 @@ def test_exception_in_expected_germinated(cells, viability, message):
 
 
 
+
 if __name__ == "__main__":
     unittest.main()
