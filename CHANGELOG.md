@@ -7,6 +7,7 @@ El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/
 ## [Unreleased]
 
 ### Agregado
+- `parse_viability`: el CSV acepta viabilidad como 0.85 o 85%, y lee la columna origin si viene.
 - Test corto de `expected_germinated` (72 celdas y 0.85 dan 61). Se corre con unittest, sin instalar nada.
 - `expected_germinated(cells, viability)`: estima plantulas por bandeja. No reemplaza el conteo real.
 - README bilingüe (español / inglés) con instalación, ejemplo de uso, formato del CSV y hoja de ruta.

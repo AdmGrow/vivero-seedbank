@@ -44,6 +44,8 @@ class SeedBank:
 
     def load_lots_csv(self, path: str):
         """Carga lotes desde un csv con columnas: id,species,harvest_year,viability,grams
+
+        origin es opcional. viability acepta 0.85 o 85%.
         Salta filas sin id. Si falta una columna requerida, lanza KeyError.
         """
         with open(path, newline="", encoding="utf-8") as f:
@@ -55,10 +57,23 @@ class SeedBank:
                     id=row["id"].strip(),
                     species=row["species"].strip(),
                     harvest_year=int(row["harvest_year"]),
-                    viability=float(row["viability"]),
+                    viability=parse_viability(row["viability"]),
                     grams=float(row["grams"]),
+                    origin=(row.get("origin") or "").strip(),
                 )
                 self.add_lot(lot)
+
+
+def parse_viability(raw) -> float:
+    """Acepta 0.85 o 85%. Devuelve un float entre 0 y 1."""
+    text = str(raw).strip().replace(",", ".")
+    if text.endswith("%"):
+        value = float(text[:-1]) / 100.0
+    else:
+        value = float(text)
+    if not 0 <= value <= 1:
+        raise ValueError("viability")
+    return value
 
 
 def expected_germinated(cells: int, viability: float) -> int:
