@@ -18,6 +18,7 @@ El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/
 
 ### Cambiado
 - Docstrings de `src/lots.py` redactados de forma neutral (sin cambios de lógica).
+- Anoté en mi cabeza que expected_germinated es solo una estimación y no el conteo real de la bandeja.
 
 ## [0.1.0-alpha] - 2026-09-25
 
