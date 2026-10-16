@@ -8,4 +8,10 @@ from lots import parse_viability
 assert parse_viability("0.85") == 0.85
 assert parse_viability("85%") == 0.85
 assert parse_viability("85,5%") == 0.855
+assert parse_viability("100%") == 1.0
+try:
+    parse_viability("120%")
+    raise AssertionError("deberia fallar")
+except ValueError as e:
+    assert "fuera de 0-1" in str(e)
 print("ok")
