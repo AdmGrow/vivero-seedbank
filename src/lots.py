@@ -72,7 +72,7 @@ def parse_viability(raw) -> float:
     else:
         value = float(text)
     if not 0 <= value <= 1:
-        raise ValueError("viability")
+        raise ValueError(f"viabilidad fuera de 0-1: {value}")
     return value
 
 
