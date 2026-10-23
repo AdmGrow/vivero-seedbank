@@ -19,6 +19,12 @@ class TestExpected(unittest.TestCase):
     def test_cero_celdas(self):
         self.assertEqual(expected_germinated(0, 0.85), 0)
 
+    def test_viabilidad_uno(self):
+        self.assertEqual(expected_germinated(10, 1.0), 10)
+
+    def test_viabilidad_cero(self):
+        self.assertEqual(expected_germinated(10, 0.0), 0)
+
     def test_celdas_negativas(self):
         with self.assertRaises(ValueError):
             expected_germinated(-1, 0.5)
