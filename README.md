@@ -35,7 +35,7 @@ Todo está en [`src/lots.py`](src/lots.py):
   - `add_lot(lot)` agrega un lote (rechaza viabilidad fuera de 0–1).
   - `sow(tray)` registra una bandeja (el lote tiene que existir).
   - `germ_rate(tray_id)` calcula el porcentaje de germinación de una bandeja (germinadas / celdas).
-  - `load_lots_csv(path)` importa lotes desde un archivo CSV.
+  - `load_lots_csv(path)` importa lotes desde un archivo CSV. Lee origin si viene y acepta viabilidad como 0.85 o 85%.
 
 ### Instalación
 
@@ -75,10 +75,11 @@ La primera fila tiene que tener estos nombres de columna exactos:
 | `id`           | Código único del lote          | `EJ-001`                       |
 | `species`      | Especie o variedad             | `Cebolla (Allium cepa)`        |
 | `harvest_year` | Año de cosecha (número entero) | `2025`                         |
-| `viability`    | Viabilidad de 0 a 1            | `0.85` (no `85%`)              |
+| `viability`    | Viabilidad de 0 a 1 o %        | `0.85` o `85%`                 |
 | `grams`        | Cantidad en gramos             | `40`                           |
+| `origin`       | Origen (opcional)              | `huerta norte`                 |
 
-Notas: las filas sin `id` se saltan. La columna `origin` todavía no se lee desde el CSV. Los datos del archivo de ejemplo son inventados.
+Notas: las filas sin `id` se saltan. La columna `origin` se lee si existe. Los datos del archivo de ejemplo son inventados.
 
 ### Hoja de ruta
 
@@ -131,7 +132,7 @@ In [`src/lots.py`](src/lots.py):
 
 - **`Lot`** — seed lot: `id`, `species`, `harvest_year`, `viability` (0–1), `grams`, optional `origin`.
 - **`Tray`** — sowing tray: `id`, `lot_id`, `sown` (date), `cells`, `germinated`.
-- **`SeedBank`** — in-memory store with `add_lot`, `sow`, `germ_rate` (germinated / cells) and `load_lots_csv`.
+- **`SeedBank`** — in-memory store with `add_lot`, `sow`, `germ_rate` (germinated / cells) and `load_lots_csv` (reads origin if present, accepts 0.85 or 85%).
 
 ### Install
 
@@ -144,7 +145,7 @@ cd vivero-seedbank
 
 ### Usage
 
-See the Spanish example above; it works as-is with [`examples/lotes_ejemplo.csv`](examples/lotes_ejemplo.csv). CSV columns (exact header names): `id`, `species`, `harvest_year`, `viability` (0–1, e.g. `0.85`), `grams`. Rows without `id` are skipped; `origin` is not read from CSV yet.
+See the Spanish example above; it works as-is with [`examples/lotes_ejemplo.csv`](examples/lotes_ejemplo.csv). CSV columns (exact header names): `id`, `species`, `harvest_year`, `viability` (0–1 or %, e.g. `0.85` or `85%`), `grams`. Optional `origin`. Rows without `id` are skipped.
 
 ### Roadmap
 
