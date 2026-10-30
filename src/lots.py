@@ -82,7 +82,7 @@ def expected_germinated(cells: int, viability: float) -> int:
     Redondeo al entero mas cercano. No reemplaza un conteo real en la bandeja.
     """
     if cells < 0:
-        raise ValueError("cells")
+        raise ValueError("las celdas no pueden ser negativas")
     if not 0 <= viability <= 1:
-        raise ValueError("viability")
+        raise ValueError("la viabilidad tiene que estar entre 0 y 1")
     return round(cells * viability)
