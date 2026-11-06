@@ -25,6 +25,10 @@ class TestExpected(unittest.TestCase):
     def test_viabilidad_cero(self):
         self.assertEqual(expected_germinated(10, 0.0), 0)
 
+    def test_redondeo_punto_cinco(self):
+        # 2 * 0.5 = 1.0, redondea a 1. Python round usa banker's pero aqui es exacto.
+        self.assertEqual(expected_germinated(2, 0.5), 1)
+
     def test_celdas_negativas(self):
         with self.assertRaises(ValueError):
             expected_germinated(-1, 0.5)
