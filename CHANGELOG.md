@@ -21,6 +21,7 @@ El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/
 - Docstrings de `src/lots.py` redactados de forma neutral (sin cambios de lógica).
 - Anoté en mi cabeza que expected_germinated es solo una estimación y no el conteo real de la bandeja.
 - Actualicé el README: ahora dice que el CSV lee origin y acepta 85% o 0.85.
+- Hoy repasé que el redondeo de expected_germinated con 72 y 0.85 da 61, y lo dejé anotado.
 
 ## [0.1.0-alpha] - 2026-09-25
 
